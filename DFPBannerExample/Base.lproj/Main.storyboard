@@ -9,7 +9,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -139,12 +139,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <pickerView contentMode="scaleToFill" id="tbi-B8-d8E">
+                                <rect key="frame" x="0.0" y="-150" width="320" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HOA-br-0G4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y83-gC-xrH"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="dismissAdUnitIdPickerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vC3-LH-P5v"/>
+                            <action selector="dismissKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rlf-zt-L4S"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="adHeightField" destination="QF2-mK-ud7" id="yc9-Ht-OX9"/>
                         <outlet property="adUnitIdField" destination="DAd-Nx-g9o" id="dkX-2J-PHr"/>
+                        <outlet property="adUnitIdPickerView" destination="tbi-B8-d8E" id="iHZ-xL-GrQ"/>
                         <outlet property="adWidthField" destination="x1B-wx-CvI" id="WFR-8B-Qx7"/>
                         <outlet property="bannerView" destination="jPL-30-0SK" id="rUl-2d-laY"/>
                         <outlet property="errorLogTextView" destination="srN-0z-qqL" id="AQh-EA-vrn"/>
