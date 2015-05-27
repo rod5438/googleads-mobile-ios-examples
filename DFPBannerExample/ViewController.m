@@ -36,14 +36,22 @@
                                                                @"adUnitId":@"/6499/example/banner",
                                                                @"Width":@"320",
                                                                @"Height":@"50"},
-                                                             @{@"friendlyName":@"YouCamMakeup tile",
+                                                             @{@"friendlyName":@"YouCamPerfect tile",
                                                                @"adUnitId":@"/14662192/youcamperfect-ios-main-tile-1",
                                                                @"Width":@"88",
                                                                @"Height":@"88"},
-                                                             @{@"friendlyName":@"YouCamMakeup tile test",
+                                                             @{@"friendlyName":@"YouCamPerfect tile test",
                                                                @"adUnitId":@"/14662192/youcamperfect-ios-main-tile-1-test",
                                                                @"Width":@"88",
-                                                               @"Height":@"88"}
+                                                               @"Height":@"88"},
+                                                             @{@"friendlyName":@"Rotate test(88*88)",
+                                                               @"adUnitId":@"/14662192/youcamperfect-ios-main-tile-2-test",
+                                                               @"Width":@"88",
+                                                               @"Height":@"88"},
+                                                             @{@"friendlyName":@"Rotate test(149*149)",
+                                                               @"adUnitId":@"/14662192/youcamperfect-ios-main-tile-2-test",
+                                                               @"Width":@"149",
+                                                               @"Height":@"149"}
                                                              ]];
     [self showAdUnitIdPickerView:NO withAnimation:NO];
 }
