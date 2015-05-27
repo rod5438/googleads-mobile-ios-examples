@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6CD8B5721ADF8ABF00A08CF9 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD8B5711ADF8ABF00A08CF9 /* GoogleMobileAds.framework */; };
+		6CEAD8A61B15980600D76BD5 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEAD8A51B15980600D76BD5 /* GoogleMobileAds.framework */; };
 		CF12E28419A6C783001EB38A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12E28319A6C783001EB38A /* main.m */; };
 		CF12E28719A6C783001EB38A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12E28619A6C783001EB38A /* AppDelegate.m */; };
 		CF12E28A19A6C783001EB38A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12E28919A6C783001EB38A /* ViewController.m */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6CD8B5711ADF8ABF00A08CF9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = DFPBannerExample/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		6CEAD8A51B15980600D76BD5 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = DFPBannerExample/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		CF12E27E19A6C783001EB38A /* DFPBannerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DFPBannerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF12E28219A6C783001EB38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF12E28319A6C783001EB38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CD8B5721ADF8ABF00A08CF9 /* GoogleMobileAds.framework in Frameworks */,
+				6CEAD8A61B15980600D76BD5 /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +43,7 @@
 		CF12E27519A6C783001EB38A = {
 			isa = PBXGroup;
 			children = (
-				6CD8B5711ADF8ABF00A08CF9 /* GoogleMobileAds.framework */,
+				6CEAD8A51B15980600D76BD5 /* GoogleMobileAds.framework */,
 				CF12E28019A6C783001EB38A /* DFPBannerExample */,
 				CF12E27F19A6C783001EB38A /* Products */,
 			);
