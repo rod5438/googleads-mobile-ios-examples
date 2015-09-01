@@ -51,7 +51,11 @@
                                                              @{@"friendlyName":@"Rotate test(149*149)",
                                                                @"adUnitId":@"/14662192/youcamperfect-ios-main-tile-2-test",
                                                                @"Width":@"149",
-                                                               @"Height":@"149"}
+                                                               @"Height":@"149"},
+                                                             @{@"friendlyName":@"Recommen U(320*81)",
+                                                               @"adUnitId":@"/14662192/app-recommend-ycp-ios-1",
+                                                               @"Width":@"320",
+                                                               @"Height":@"81"}
                                                              ]];
     [self showAdUnitIdPickerView:NO withAnimation:NO];
 }
