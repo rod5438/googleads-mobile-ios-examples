@@ -7,6 +7,7 @@
 #define defaultAdUnitId @"/6499/example/banner"
 #define defaultAdWidth 320
 #define defaultAdHeight 50
+#define defaultSampleJSONString @"{\"banner_country\":\"us\",\"version\":\"4.8.0\"}"
 
 @interface ViewController() <GADBannerViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -14,6 +15,8 @@
 @property (nonatomic) IBOutlet UITextField *adWidthField;
 @property (nonatomic) IBOutlet UITextField *adHeightField;
 @property (nonatomic) IBOutlet UITextView *errorLogTextView;
+@property (nonatomic) IBOutlet UITextView *customTargetingJSONView;
+@property (nonatomic) IBOutlet UISwitch *customTargetingSwitch;
 @property (nonatomic) IBOutlet UIPickerView *adUnitIdPickerView;
 @property (nonatomic) NSMutableArray *adUnitIds;
 
@@ -58,6 +61,7 @@
                                                                @"Height":@"81"}
                                                              ]];
     [self showAdUnitIdPickerView:NO withAnimation:NO];
+    [self.customTargetingJSONView setText:defaultSampleJSONString];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,7 +75,17 @@
     CGRect rect = CGRectMake((self.view.frame.size.width - adSize.width)/2, 60, adSize.width, adSize.height);
     self.bannerView.frame = rect;
     [self.errorLogTextView setText:@""];
-    [self.bannerView loadRequest:[DFPRequest request]];
+    DFPRequest *request = [DFPRequest request];
+    if (self.customTargetingSwitch.on) {
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[self.customTargetingJSONView.text dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL];
+        if (jsonObject) {
+            request.customTargeting = jsonObject;
+        }
+        else {
+            self.errorLogTextView.text = @"JSON format error";
+        }
+    }
+    [self.bannerView loadRequest:request];
 }
 
 - (NSString *)refineAdUnitIdTextField
@@ -157,6 +171,17 @@
     [self showAdUnitIdPickerView:YES withAnimation:YES];
 }
 
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if(textView == self.customTargetingJSONView && [text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark PickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -186,6 +211,13 @@
     self.adWidthField.text = self.adUnitIds[row][@"Width"];
     self.adHeightField.text = self.adUnitIds[row][@"Height"];
     [self refineSizeTextField];
+}
+
+#pragma mark IBAction
+
+- (IBAction)customTargetingSwitchValueChanged:(UISwitch *)sender
+{
+    self.customTargetingJSONView.editable = sender.on;
 }
 
 @end
