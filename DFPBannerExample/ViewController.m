@@ -70,6 +70,7 @@
     CGSize adSize = [self refineSizeTextField];
     CGRect rect = CGRectMake((self.view.frame.size.width - adSize.width)/2, 60, adSize.width, adSize.height);
     self.bannerView.frame = rect;
+    [self.errorLogTextView setText:@""];
     [self.bannerView loadRequest:[DFPRequest request]];
 }
 
