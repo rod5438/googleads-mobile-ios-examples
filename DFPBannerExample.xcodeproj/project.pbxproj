@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CEAD8A61B15980600D76BD5 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CEAD8A51B15980600D76BD5 /* GoogleMobileAds.framework */; };
+		96D468991BF34B27007407C0 /* DeviceInfoUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D468981BF34B27007407C0 /* DeviceInfoUtility.m */; };
 		CF12E28419A6C783001EB38A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12E28319A6C783001EB38A /* main.m */; };
 		CF12E28719A6C783001EB38A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12E28619A6C783001EB38A /* AppDelegate.m */; };
 		CF12E28A19A6C783001EB38A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF12E28919A6C783001EB38A /* ViewController.m */; };
@@ -17,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		6CEAD8A51B15980600D76BD5 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = DFPBannerExample/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		96D468971BF34B27007407C0 /* DeviceInfoUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoUtility.h; sourceTree = "<group>"; };
+		96D468981BF34B27007407C0 /* DeviceInfoUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoUtility.m; sourceTree = "<group>"; };
 		CF12E27E19A6C783001EB38A /* DFPBannerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DFPBannerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF12E28219A6C783001EB38A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF12E28319A6C783001EB38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				CF12E28B19A6C783001EB38A /* Main.storyboard */,
 				CF12E28E19A6C783001EB38A /* Images.xcassets */,
 				CF12E28119A6C783001EB38A /* Supporting Files */,
+				96D468971BF34B27007407C0 /* DeviceInfoUtility.h */,
+				96D468981BF34B27007407C0 /* DeviceInfoUtility.m */,
 			);
 			path = DFPBannerExample;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			files = (
 				CF12E28A19A6C783001EB38A /* ViewController.m in Sources */,
 				CF12E28719A6C783001EB38A /* AppDelegate.m in Sources */,
+				96D468991BF34B27007407C0 /* DeviceInfoUtility.m in Sources */,
 				CF12E28419A6C783001EB38A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,17 +3,19 @@
 @import GoogleMobileAds;
 
 #import "ViewController.h"
+#import "DeviceInfoUtility.h"
 
 #define defaultAdUnitId @"/6499/example/banner"
 #define defaultAdWidth 320
 #define defaultAdHeight 50
-#define defaultSampleJSONString @"{\"banner_country\":\"us\",\"version\":\"4.8.0\"}"
+#define defaultSampleJSONString @"{\"banner_country\":\"zh_TW\",\"version\":\"4.8.0\"}"
 
 @interface ViewController() <GADBannerViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic) IBOutlet UITextField *adUnitIdField;
 @property (nonatomic) IBOutlet UITextField *adWidthField;
 @property (nonatomic) IBOutlet UITextField *adHeightField;
+@property (nonatomic) IBOutlet UITextField *languageCodeField;
 @property (nonatomic) IBOutlet UITextView *errorLogTextView;
 @property (nonatomic) IBOutlet UITextView *customTargetingJSONView;
 @property (nonatomic) IBOutlet UISwitch *customTargetingSwitch;
@@ -58,7 +60,19 @@
                                                              @{@"friendlyName":@"Recommen U(320*81)",
                                                                @"adUnitId":@"/14662192/app-recommend-ycp-ios-1",
                                                                @"Width":@"320",
-                                                               @"Height":@"81"}
+                                                               @"Height":@"81"},
+                                                             @{@"friendlyName":@"YCP BC main(320*124)",
+                                                               @"adUnitId":@"/14662192/main-page-topbanner-bc-ycp-ios",
+                                                               @"Width":@"320",
+                                                               @"Height":@"124"},
+                                                             @{@"friendlyName":@"YMK BC main(320*124)",
+                                                               @"adUnitId":@"/14662192/main-page-topbanner-bc-ymk-ios",
+                                                               @"Width":@"320",
+                                                               @"Height":@"124"},
+                                                             @{@"friendlyName":@"YCN BC main(320*124)",
+                                                               @"adUnitId":@"/14662192/main-page-topbanner-bc-ycn-ios",
+                                                               @"Width":@"320",
+                                                               @"Height":@"124"}
                                                              ]];
     [self showAdUnitIdPickerView:NO withAnimation:NO];
     [self.customTargetingJSONView setText:defaultSampleJSONString];
@@ -218,6 +232,14 @@
 - (IBAction)customTargetingSwitchValueChanged:(UISwitch *)sender
 {
     self.customTargetingJSONView.editable = sender.on;
+    if (sender.on) {
+        NSString *language = [DeviceInfoUtility languageCode];
+        language = [language stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
+        self.languageCodeField.text = language;
+    }
+    else {
+        self.languageCodeField.text = nil;
+    }
 }
 
 @end
